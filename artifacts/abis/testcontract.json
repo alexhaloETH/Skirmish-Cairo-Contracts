@@ -2,24 +2,23 @@
     {
         "inputs": [
             {
-                "name": "amount",
+                "name": "token",
                 "type": "felt"
             }
         ],
-        "name": "increase_balance",
+        "name": "constructor",
         "outputs": [],
-        "type": "function"
+        "type": "constructor"
     },
     {
-        "inputs": [],
-        "name": "get_balance",
-        "outputs": [
+        "inputs": [
             {
-                "name": "res",
+                "name": "sns",
                 "type": "felt"
             }
         ],
-        "stateMutability": "view",
+        "name": "set_SNS",
+        "outputs": [],
         "type": "function"
     }
 ]

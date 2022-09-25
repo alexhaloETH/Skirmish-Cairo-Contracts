@@ -1,13 +1,11 @@
 # SPDX-License-Identifier: MIT
-# OpenZeppelin Contracts for Cairo v0.3.2 (utils/constants/library.cairo)
+# OpenZeppelin Contracts for Cairo v0.3.1 (utils/constants/library.cairo)
 
 %lang starknet
 
+
 const TRUE = 1
 const FALSE = 0
-
-
-
 
 #
 # Numbers

@@ -1,3 +1,5 @@
 goerli.deployments.txt
+127.0.0.1.deployments.txt
+privateKeys.env
 Makefile
 Notes.txt
