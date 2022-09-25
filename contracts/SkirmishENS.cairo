@@ -25,11 +25,6 @@ from starkware.cairo.common.uint256 import Uint256,uint256_lt
 
 
 
-# need setter and getter implemente the bank here or whatevr is happening 
-# owner transfer shits 
-#also the hint for t
-#set it as a fee not willy nilly
-# 1000000000000000000
 
 
 struct MatchData:
