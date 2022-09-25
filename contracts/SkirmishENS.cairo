@@ -107,9 +107,6 @@ end
 
 
 
-#need a function that return the readines of both plus the balance of both makes it quick return a touple
-
-
 # given an address fetch the SNS
 @view
 func get_SNS_from_address{syscall_ptr : felt*, pedersen_ptr : HashBuiltin*, range_check_ptr}(address : felt) -> (res : felt):
@@ -199,7 +196,6 @@ end
 #   interaction functions
 #
 
-# ahve somewhere wehre the onwer can actually reset some of the SNS
 
 # set the SNS of an address.
 @external
@@ -353,48 +349,6 @@ func Game_outcome{syscall_ptr : felt*, pedersen_ptr : HashBuiltin*, range_check_
     return ()
 end
 
-
-
-
-
-
-# need a way to reset the  sotrage var and the suual asserts
-
-
-
-
-
-
-# the host crates  a lobby and it is a transaction     he crates the room with the code   writes his address   sends the tokens to the contacts also writes the wager
-# prob a sort of wait lobby generating screen
-
-
-# second player comes if he accepts   (this are two difffrent fucntion)   finds the storage var writes his adress   moves the funds into the contract
-
-# starts
-
-# the game ends hoever possible  (apart from server crash)   function calls giving in the room id and the winner either being the host or player  
-# and then a normal transfer from the contract as the funds are int his contrcat reset the storage var
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#struct MatchData:
-   # member LH_address : felt
-   # member LJ_address : felt
-   # member wager_amount : Uint256
-#end
 
 
 
