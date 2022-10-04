@@ -210,7 +210,12 @@
             }
         ],
         "name": "Game_outcome",
-        "outputs": [],
+        "outputs": [
+            {
+                "name": "winner",
+                "type": "felt"
+            }
+        ],
         "type": "function"
     }
 ]
