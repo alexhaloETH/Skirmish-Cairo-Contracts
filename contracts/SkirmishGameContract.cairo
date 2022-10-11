@@ -1,5 +1,6 @@
 
-// SPDX-License-Identifier: MIT
+// MIT LICENSE
+// -----------------------------------
 
 
 
@@ -16,7 +17,9 @@
 // whats going to happen is that in the function the string will be encrypted (so the key will be stored here) and it will be checked against the stored hash
 // this shoudl eliminate people who go on voyager and not know the password from ending the game too early
 
+// missing all of the owner checks and proofings
 
+// WIP
 
 
 //

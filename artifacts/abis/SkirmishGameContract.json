@@ -226,6 +226,10 @@
             {
                 "name": "password",
                 "type": "felt"
+            },
+            {
+                "name": "amount",
+                "type": "Uint256"
             }
         ],
         "name": "Game_outcome",

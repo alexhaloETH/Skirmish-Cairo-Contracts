@@ -1,5 +1,5 @@
-// 
-// SPDX-License-Identifier: MIT
+// MIT LICENSE
+// -----------------------------------
 
 
 
@@ -12,10 +12,10 @@
     // this function takes the realmId of the sqaud that is being changed, it also take the already encrypted data
     //the data is encrypted using EAS method the key being the private key stored in the game, the data is encrypted then given so its not public
 
-// on the viewwe take the realmID of the specific squad to fetch plus the account of the holder
+// on the view take the realmID of the specific squad to fetch plus the account of the holder
 // this returns an encrypted message that can only be decrypted from the private key that is from that address stored in the game therefore everything is secure
 
-
+// WIP 
 
 %lang starknet
 
