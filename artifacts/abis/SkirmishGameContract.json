@@ -100,6 +100,31 @@
     {
         "inputs": [
             {
+                "name": "_matchID",
+                "type": "felt"
+            }
+        ],
+        "name": "Game_Lobby_view",
+        "outputs": [
+            {
+                "name": "Lobby_host",
+                "type": "felt"
+            },
+            {
+                "name": "Lobby_joinee",
+                "type": "felt"
+            },
+            {
+                "name": "wager_amount",
+                "type": "Uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
                 "name": "token_add",
                 "type": "felt"
             }
@@ -175,31 +200,6 @@
         ],
         "name": "Game_Lobby_Start",
         "outputs": [],
-        "type": "function"
-    },
-    {
-        "inputs": [
-            {
-                "name": "_matchID",
-                "type": "felt"
-            }
-        ],
-        "name": "Game_Lobby_view",
-        "outputs": [
-            {
-                "name": "Lobby_host",
-                "type": "felt"
-            },
-            {
-                "name": "Lobby_joinee",
-                "type": "felt"
-            },
-            {
-                "name": "wager_amount",
-                "type": "Uint256"
-            }
-        ],
-        "stateMutability": "view",
         "type": "function"
     },
     {

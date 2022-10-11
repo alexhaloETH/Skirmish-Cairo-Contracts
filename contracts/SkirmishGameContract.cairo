@@ -33,7 +33,7 @@ from starkware.starknet.common.syscalls import get_caller_address, get_contract_
 from starkware.cairo.common.math import assert_not_zero, assert_le, assert_lt,assert_nn_le, assert_nn, unsigned_div_rem
 
 from contracts.lib.library import TRUE, FALSE
-from openzeppelin.token.erc20.IERC20 import IERC20
+from contracts.Interfaces.IERC20 import IERC20
 
 from starkware.cairo.common.uint256 import Uint256,uint256_lt
 from contracts.lib.aes_128 import aes_128_decrypt, aes_128_encrypt
