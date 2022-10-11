@@ -19,7 +19,7 @@
 
 // missing all of the owner checks and proofings
 
-// WIP
+// WIP   --- 
 
 
 //
@@ -149,6 +149,15 @@ func see_balance_of_contract{syscall_ptr : felt*, pedersen_ptr : HashBuiltin*, r
     return (balance = balance);
 }
 
+// for debug reasons, prob will be deleted
+@view
+func Game_Lobby_view{syscall_ptr : felt*, pedersen_ptr : HashBuiltin*, range_check_ptr}(_matchID : felt) -> (Lobby_host :felt, Lobby_joinee : felt, wager_amount : Uint256){
+
+    let _matchData : MatchData = _match.read(_matchID);
+
+    return (Lobby_host= _matchData.LH_address, Lobby_joinee = _matchData.LJ_address, wager_amount = _matchData.wager_amount);
+}
+
 
 //
 //   setter
@@ -272,6 +281,7 @@ func withdraw_tokens{syscall_ptr : felt*, pedersen_ptr : HashBuiltin*, range_che
     return ();
 }
 
+// work but not tested in action yet
 @external
 func Game_Lobby_Start{syscall_ptr : felt*, pedersen_ptr : HashBuiltin*, range_check_ptr}(_matchID : felt, wager:Uint256, encrypted_sentence : felt) -> (){
 
@@ -284,14 +294,6 @@ func Game_Lobby_Start{syscall_ptr : felt*, pedersen_ptr : HashBuiltin*, range_ch
     _match.write(_matchID, _matchData);
     IERC20.transferFrom(contract_address=token,sender=caller,recipient= contract_address, amount =wager);
     return ();
-}
-
-@view
-func Game_Lobby_view{syscall_ptr : felt*, pedersen_ptr : HashBuiltin*, range_check_ptr}(_matchID : felt) -> (Lobby_host :felt, Lobby_joinee : felt, wager_amount : Uint256){
-
-    let _matchData : MatchData = _match.read(_matchID);
-
-    return (Lobby_host= _matchData.LH_address, Lobby_joinee = _matchData.LJ_address, wager_amount = _matchData.wager_amount);
 }
 
 @external
