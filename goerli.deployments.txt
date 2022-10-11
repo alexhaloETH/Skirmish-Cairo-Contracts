@@ -1,5 +1,0 @@
-
-0x03e41c33cfb4081c8a40f08bc61d7b62396485587415b967e1dc295a156d03e9:artifacts/abis/TestToken.json     most recent token deploy
-
-
-0x060411da281bfb491fc287ad1e0e5ce9dd7aeb04a799d556502aa231804f42fe:artifacts/abis/SkirmishGameContract.json
