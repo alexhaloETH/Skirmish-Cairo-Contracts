@@ -54,6 +54,12 @@ struct MatchData{
    encrypted_password : felt,
 }
 
+struct GameState {
+    state: felt,
+    reason_one: felt,
+    reason_two: felt,
+}
+
 
 // SNS = Skirmish Name Service
 @storage_var
@@ -84,6 +90,11 @@ func _match(mathc_ID : felt) -> (res : MatchData){
 
 @storage_var
 func _encryptionServerKey() -> (res: felt) {
+}
+
+
+@storage_var
+func _gameState() -> (_state : GameState) {
 }
 
 
@@ -122,6 +133,14 @@ func get_SNS_from_address{syscall_ptr : felt*, pedersen_ptr : HashBuiltin*, rang
 func get_address_from_SNS{syscall_ptr : felt*, pedersen_ptr : HashBuiltin*, range_check_ptr}(sns : felt) -> (address : felt){
     let (res : felt) = SNSToAddressStorage.read(sns = sns);
     return (address = res);
+}
+
+// get the state of the game, depending to what this is set the client can receive warinng messages about incoming game down times or completly stop the game for security reasons
+@view
+func get_current_server_status{syscall_ptr : felt*, pedersen_ptr : HashBuiltin*, range_check_ptr}() -> (state : felt,reason_one : felt, reason_two : felt){
+    let (res : GameState) = _gameState.read();
+
+    return (state = res.state, reason_one = res.reason_one, reason_two = res.reason_two, );
 }
 
 //get the address of the token used for all of the transactions
@@ -168,6 +187,14 @@ func Game_Lobby_view{syscall_ptr : felt*, pedersen_ptr : HashBuiltin*, range_che
 @external
 func set_token_address{syscall_ptr : felt*, pedersen_ptr : HashBuiltin*, range_check_ptr}(token_add : felt) -> (){
     _token.write(token_add);
+    return ();
+}
+
+@external
+func set_server_status{syscall_ptr : felt*, pedersen_ptr : HashBuiltin*, range_check_ptr}(_state : felt, _reason_one : felt, _reason_two) -> (){
+    let dummyStruct: GameState = GameState(state=_state, reason_one=_reason_one,reason_two=_reason_two );
+
+    _gameState.write(dummyStruct);
     return ();
 }
 
